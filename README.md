@@ -32,11 +32,13 @@ config.middleware.use Rack::ErrorToSlack
 ```
 Rack::ErrorToSlack.configure do |config|
   config.webhook_url = 'https://hooks.slack.com/services/your_webhook_url'
+  
   ### follows are option ###
-  # emoji icon of slack post
-  config.emoji = ':ghost:'  # default: ':innocent:'
-  # username of slack post
-  config.slackname = 'ErrorSharing'  # default: 'ErrorToSlack'
+  # emoji icon of slack post.  DEFAULT VALUE: ':innocent:'
+  config.emoji = ':ghost:'  
+  
+  # username of slack post.    DEFAULT VALUE: 'ErrorToSlack'
+  config.slackname = 'ErrorSharing'
 end
 ```
 
