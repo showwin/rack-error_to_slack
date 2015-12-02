@@ -2,6 +2,7 @@
 This is a rack middleware that post error to slack.  
 EXAMPLE: ![](https://github.com/showwin/rack-error_to_slack/blob/master/doc/sample.png)
 
+Inspired by [hitode909/Plack-Middleware-PostErrorToSlack](https://github.com/hitode909/Plack-Middleware-PostErrorToSlack)
 
 ## Installation
 
