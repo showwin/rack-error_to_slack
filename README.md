@@ -1,7 +1,6 @@
 # Rack::ErrorToSlack
 This is a rack middleware that post error to slack.  
-EXAMPLE:
-img_path
+EXAMPLE: ![](https://github.com/showwin/rack-error_to_slack/blob/master/doc/sample.png)
 
 
 ## Installation
@@ -14,7 +13,7 @@ gem 'rack-error_to_slack'
 
 And then execute:
 
-    $ bundle
+    $ bundle install
 
 Or install it yourself as:
 
@@ -22,11 +21,13 @@ Or install it yourself as:
 
 ## Usage
 ### for Rails 4.x
+#### Step1
 `config/environments/development.rb`
 ```
 config.middleware.use Rack::ErrorToSlack
 ```
 
+#### Step2
 `config/initializers/error_to_slack.rb`
 ```
 Rack::ErrorToSlack.configure do |config|
@@ -40,4 +41,4 @@ end
 ```
 
 ## LICENSE
-MIT
+[MIT](https://github.com/showwin/rack-error_to_slack/blob/master/LICENSE)
