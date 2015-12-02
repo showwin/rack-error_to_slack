@@ -24,7 +24,7 @@ Or install it yourself as:
 #### Step1
 `config/environments/development.rb`
 ```
-config.middleware.use Rack::ErrorToSlack
+config.middleware.insert_before ActionDispatch::RemoteIp, Rack::ErrorToSlack
 ```
 
 #### Step2
