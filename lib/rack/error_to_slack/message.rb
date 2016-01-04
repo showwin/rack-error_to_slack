@@ -6,12 +6,13 @@ module Rack
   class ErrorToSlack
     # Message Class
     class Message
-      def initialize(env, err_msg)
+      def initialize(env, err_msg, err_location)
         @data = {
-          'text': "#{username} encountered an error while " \
-                  "`#{env['REQUEST_METHOD']} #{env['PATH_INFO']}` " \
+          'text': "#{username} encountered an error " \
+                  "while `#{env['REQUEST_METHOD']} #{env['PATH_INFO']}` " \
                   "on branch `#{branch}`\n" \
-                  "```#{err_msg}```",
+                  "```#{err_msg}```\n" \
+                  "`#{err_location.gsub(/^#{root_path}/, '').tr('`', "'")}`",
           'username': slackname,
           'icon_emoji': emoji
         }
@@ -23,6 +24,10 @@ module Rack
       end
 
       private
+
+      def root_path
+        Rails.root.to_s || ''
+      end
 
       def username
         ErrorToSlack.configuration.username

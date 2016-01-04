@@ -13,7 +13,7 @@ module Rack
       begin
         response = @app.call(env)
       rescue Exception => exception
-        Message.new(env, exception.message).send
+        Message.new(env, exception.message, $@.first).send
         raise exception
       end
       response
